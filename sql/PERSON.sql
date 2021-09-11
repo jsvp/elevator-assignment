@@ -1,0 +1,4 @@
+CREATE TABLE [PERSON] (
+  [id] int PRIMARY KEY NOT NULL
+)
+GO
