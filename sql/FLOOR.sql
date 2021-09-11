@@ -1,0 +1,4 @@
+CREATE TABLE [FLOOR] (
+  [number] int PRIMARY KEY NOT NULL
+)
+GO

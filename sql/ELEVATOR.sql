@@ -1,0 +1,5 @@
+CREATE TABLE [ELEVATOR] (
+  [id] int PRIMARY KEY NOT NULL,
+  [in_use] bit NOT NULL
+)
+GO
