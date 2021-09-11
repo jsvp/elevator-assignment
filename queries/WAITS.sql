@@ -1,5 +1,5 @@
 CREATE VIEW WAITS AS
-/* The returned dataset describes each elevator waiting, answering the questions
+/* The returned dataset describes each wait, answering the questions
     - in which floor and when each person requested the elevator?
     - when he/she got into the elevator?
 */
@@ -14,8 +14,12 @@ WITH waits_cte AS (
         ROW_NUMBER OVER (PARTITION BY r.person_id, r.timestamp ORDER BY i.timestamp) AS into_rownumber
 
     FROM PERSON AS p
+
+    -- Join requests
     INNER JOIN REQUEST AS r ON
         r.person_id = p.id
+
+    -- Join 'into'-interactions
     INNER JOIN INTERACTION AS i ON
         i.person_id = p.id AND
         i.floor_number = r.floor_number AND

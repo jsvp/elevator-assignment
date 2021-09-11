@@ -15,7 +15,10 @@ SELECT
     o.out_floor_number,
     o.transportation_duration_s,
     wait_duration_s + transportation_duration_s AS journey_duration_s
+
 FROM WAITS AS i
+
+-- Join waits with transportation to form the "full" journey. 
 INNER JOIN TRANSPORTATIONS AS o ON
     o.person_id = i.person_id AND
     o.into_floor_number = i.into_floor_number AND
