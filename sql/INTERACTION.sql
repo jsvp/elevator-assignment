@@ -1,5 +1,5 @@
 CREATE TABLE [INTERACTION] (
-  [floor_no] int NOT NULL,
+  [floor_number] int NOT NULL,
   [elevator_id] int NOT NULL,
   [person_id] int NOT NULL,
   [timestamp] timestamp NOT NULL,
